@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<form-beans>
+	   <form-bean name="MvcForm"
+		type="com.oracle.java.mvc.struts.form.MvcForm"/>
+	</form-beans>
+
+	<action-mappings>
+	   <action path="/works"
+		type="com.oracle.java.mvc.struts.action.MvcAction"
+		name="MvcForm" >
+		<forward name="success" path="/View/Result.jsp"/>
+			
+	   </action>
+	   
+	   <action path="/rest/works"
+		type="com.oracle.java.mvc.struts.action.MvcJsonAction"
+		 >
+		<forward name="success" path="/View/ResultJson.jsp"/>
+			
+	   </action>
+	  
+	</action-mappings>
+<message-resources parameter="com.resources.MessageResource" />
+</struts-config>
